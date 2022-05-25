@@ -1,6 +1,12 @@
 /**
   * Create storage accounts
   */
+
+resource "random_string" "suffix" {
+  length = 2
+  special = false
+}
+  
 resource "azurerm_storage_account" "common" {
   for_each = var.storages
 
